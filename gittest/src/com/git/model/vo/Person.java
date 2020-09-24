@@ -6,7 +6,7 @@ public class Person {
 	private int age;
 	private double height;
 	private double weight;
-	
+	private String[] hobby;
 	public Person() {
 		// TODO Auto-generated constructor stub
 	}
