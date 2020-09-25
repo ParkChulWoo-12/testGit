@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.ensalad.product.model.service.ProductService;
 import com.ensalad.product.model.vo.Product;
-import com.ensalad.product.service.ProductService;
 
 /**
  * Servlet implementation class DetailProductServlet

@@ -1,4 +1,4 @@
-package com.ensalad.product.service;
+package com.ensalad.product.model.service;
 
 import static com.ensalad.common.JDBCTemplate.close;
 import static com.ensalad.common.JDBCTemplate.getConnection;
