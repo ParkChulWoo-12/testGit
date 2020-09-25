@@ -4,7 +4,7 @@
 <%@include file="/views/common/header.jsp"%>
 
 <section>
-			<p></p>
+			
 </section>
 
 <%@include file="/views/common/footer.jsp"%>
