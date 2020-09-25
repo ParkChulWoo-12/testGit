@@ -34,8 +34,8 @@
                 </div>
                 <hr>
                 <div class="btn">
-                    <input type="button" value="장바구니 담기" class="jangbtn">
-                    <input type="button" value="주문하기" class="orderbtn">
+                   <button onclick="location.assign('<%=request.getContextPath() %>')">장바구니 담기</button>
+                   <button onclick="location.assign('<%=request.getContextPath() %>')">주문하기</button>
                 </div>
             </div>
            
