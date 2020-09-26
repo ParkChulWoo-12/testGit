@@ -42,7 +42,7 @@ public class ProductDao {
             p.setProductPrice(rs.getInt("product_price"));
             p.setProductContent(rs.getString("product_content"));
             p.setProductType(rs.getString("product_type"));
-            p.setEventCode(rs.getInt("event_code"));
+            p.setEventCode(rs.getString("event_code"));
             p.setProductThumbnail(rs.getString("product_thumbnail"));
             p.setProductImg1(rs.getString("product_img1"));
             p.setProductImg2(rs.getString("product_img2"));
@@ -72,10 +72,17 @@ public class ProductDao {
             while(rs.next()) {
                p=new Product();
                p.setProductNo(rs.getInt("product_no"));
-               p.setProductPrice(rs.getInt("product_price"));
                p.setProductName(rs.getString("product_name"));
+               p.setProductPrice(rs.getInt("product_price"));
                p.setProductContent(rs.getString("product_content"));
                p.setProductType(rs.getString("product_type"));
+               p.setEventCode(rs.getString("event_code"));
+               p.setProductThumbnail(rs.getString("product_thumbnail"));
+               p.setProductImg1(rs.getString("product_img1"));
+               p.setProductImg2(rs.getString("product_img2"));
+               p.setProductImg3(rs.getString("product_img3"));
+               p.setProductImg4(rs.getString("product_img4"));
+               p.setProductImg5(rs.getString("product_img5"));
             }
          }catch(SQLException e) {
             e.printStackTrace();

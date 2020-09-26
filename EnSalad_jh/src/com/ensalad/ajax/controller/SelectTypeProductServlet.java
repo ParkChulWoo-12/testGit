@@ -35,16 +35,21 @@ public class SelectTypeProductServlet extends HttpServlet {
 		
 		List<Product> list=new ProductService().selectProductAll();
 		String type = request.getParameter("type");
-	      List<Product> selectList = list; 
-	      for(int i = 0; i < selectList.size(); i++) {
-	    	  System.out.println(selectList.get(i));
-	    	  if(selectList.get(i).getProductType().equals(type)) {
-	    		  selectList.get(i);
-	    	  }
+	      List<Product> selectList = new ArrayList();
+	      if(!type.equals("전체보기")){
+	    	  for(int i = 0; i < list.size(); i++) {
+		    	  if(list.get(i).getProductType().equals(type)) {
+		    		  selectList.add(list.get(i));
+		    	  }
+		      }
+		      request.setAttribute("list", selectList);
+	      }else{
+	    	  request.setAttribute("list", list);
 	      }
 	      
-	      request.setAttribute("selectList", selectList);
-	      request.getRequestDispatcher("/views/product/productAll.jsp").forward(request, response);
+	      
+	      
+	      request.getRequestDispatcher("/views/product/ajaxProductSelect.jsp").forward(request, response);
 	}
 
 	/**

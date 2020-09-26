@@ -34,8 +34,8 @@
                 </div>
                 <hr>
                 <div class="btn">
-                   <button onclick="location.assign('<%=request.getContextPath() %>')">장바구니 담기</button>
-                   <button onclick="location.assign('<%=request.getContextPath() %>')">주문하기</button>
+                   <button class="jangbtn" onclick="location.assign('<%=request.getContextPath() %>')">장바구니 담기</button>
+                   <button class="orderbtn" onclick="location.assign('<%=request.getContextPath() %>/order/productOrder')">주문하기</button>
                 </div>
             </div>
            
@@ -70,6 +70,9 @@
 </section>
 
 <style>
+	hr{
+	 margin : 50px;
+	}
     /* 세션 */
     .thisproduct{
         /* 헤더와 풋터 간격 */
@@ -88,19 +91,19 @@
     }
     /* 썸네일 이미지 */
     .img {
-        width: 400px;
+        width: 500px;
         height: 400px;
         border: 1px red solid;
     }
     /* 상품 정보 창 */
     .productinformation {
-        width: 400px;
+        width: 500px;
         height: 400px;
         border: 1px blue solid;
     }
     /* 주문하기 / 장바구니 버튼 */
     .btn{
-        display: flex;
+        
     }
     /* 장바구니 */
     .jangbtn{
@@ -108,7 +111,9 @@
         background-color: white;
         width: 200px;
         height: 50px;
-        margin-left: 20px;
+        margin-left: 30px;
+        
+        
     }
     /* 주문하기 */
     .orderbtn{
@@ -116,7 +121,8 @@
         background-color: green;
         width: 200px;
         height: 50px;
-        margin-left: 20px;
+        margin-left: 30px;
+        
     }
     /* 관련상품 */
     .Relatedproducts{/* ul을 담고있는 div */

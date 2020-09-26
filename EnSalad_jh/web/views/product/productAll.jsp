@@ -40,7 +40,6 @@
 		            <p><%=p.getProductName() %></p>
 		            <p><%=p.getProductPrice() %> </p>
 		            <p><%=p.getProductContent() %> </p>
-		            
 		         </a>
 	         </div>
 	         <%} %>
@@ -103,10 +102,9 @@
       $(".menu").click(e=>{
     	  $.ajax({
     		  url:"<%=request.getContextPath()%>/ajax/selectType",
-    		   data:{"type":e.target.context},
+    		   data:{"type":e.target.textContent},
     		  success:function(data){
-    			  console.log(data);
-    			  $(".total").html(data).css("display"," none");
+    			  $(".menus").html(data);
     			  
     		  }
     	  });
