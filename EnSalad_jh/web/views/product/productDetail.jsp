@@ -25,11 +25,11 @@
                 </div>
                 <div class="su-form" >
                     <form class="count" name="form" method="get">
-                        수량 : <input type="text" name="sell_price" value="<%=p.getProductPrice()%>">
-                        <input type="text" name="amount" value="1" size="3" onchange="change();">
+                        수량 : <input type="text" id="sell_price" value="<%=p.getProductPrice()%>">
+                        <input type="text" id="amount" value="1" size="3" onchange="change();">
                         <input type="button" value=" + " onclick="add();">
                         <input type="button" value=" - " onclick="del();"><br>
-                        금액 : <input type="text" name="sum" size="11" readonly>원
+                        금액 : <input type="text" id="sum" size="11" readonly>원
                     </form>
                 </div>
                 <hr>
@@ -191,44 +191,46 @@
   
 </style>
 
-<script>
-    // 수량/가격 기능 script 구문
-    var sell_price;
-    var amount;
 
-    function init() {
-        sell_price = document.form.sell_price.value;
-        amount = document.form.amount.value;
-        document.form.sum.value = sell_price;
-        change();
-    }
+<script language="javascript">
+// 수량/가격 기능 script 구문
+var sell_price;
+var amount;
 
-    function add() {
-        hm = document.form.amount;
-        sum = document.form.sum;
-        hm.value++;
+function init() {//수량결과 함수
+    sell_price = document.getElementById("sell_price").value;
+    amount = document.getElementById("amount").value;
+    document.getElementById("sum").value = sell_price;
+    change();
+}
+console.log(init());
 
+function add() {//수량추가 하는 함수
+    hm = document.getElementById("amount");
+    sum = document.getElementById("sum");
+    hm.value++;
+
+    sum.value = parseInt(hm.value) * sell_price;
+}
+
+function del() {//수량감소 하는 함수
+    hm = document.getElementById("amount");
+    sum = document.getElementById("sum");
+    if (hm.value > 1) {
+        hm.value--;
         sum.value = parseInt(hm.value) * sell_price;
     }
+}
 
-    function del() {
-        hm = document.form.amount;
-        sum = document.form.sum;
-        if (hm.value > 1) {
-            hm.value--;
-            sum.value = parseInt(hm.value) * sell_price;
-        }
+function change() {//수량 변화시켜주는
+    hm = document.getElementById("amount");
+    sum = document.getElementById("sum");
+
+    if (hm.value < 0) {
+        hm.value = 0;
     }
-
-    function change() {
-        hm = document.form.amount;
-        sum = document.form.sum;
-
-        if (hm.value < 0) {
-            hm.value = 0;
-        }
-        sum.value = parseInt(hm.value) * sell_price;
-    }  
+    sum.value = parseInt(hm.value) * sell_price;
+}  
 </script>
 
 
